@@ -3,12 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
+
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
+
+import { ProfileCreateComponent } from './profile-create/profile-create.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TestAngularComponent } from './test-angular/test-angular.component';
+
 
 
 const appRoutes: Routes = [
@@ -20,6 +25,11 @@ const appRoutes: Routes = [
   { path: '',
     redirectTo: '/profiles',
     pathMatch: 'full'
+  },
+  {
+    path: 'profile-create',
+    component: ProfileCreateComponent,
+    data: { title: 'Create Profile' }
   }
 ];
 
@@ -27,10 +37,14 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfileCreateComponent,
+    TestAngularComponent
+    
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(
@@ -41,4 +55,6 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

@@ -1,0 +1,34 @@
+<p>
+  profile-create works!
+</p>
+
+
+<div class="container">
+  <h1>Add New Profile</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveProfile()" #bookForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="profile.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="Location">Location</label>
+          <input type="text" class="form-control" [(ngModel)]="profile.Location" name="Location" required>
+        </div>
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="text" class="form-control" [(ngModel)]="profile.Email" name="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="PhoneNumber">PhoneNumber</label>
+          <input type="text" class="form-control" [(ngModel)]="profile.PhoneNumber" name="PhoneNumber" required>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
