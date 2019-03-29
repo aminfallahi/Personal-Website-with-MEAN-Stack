@@ -21,10 +21,11 @@ router.get('/:id', function(req, res, next) {
 
 /* SAVE Profile */
 router.post('/', function(req, res, next) {
+   
     var newProfile = new Profile(req.body);
     newProfile.save().then(item => {res.json(newProfile)})
     .catch(err=>{res.status(400).send("save failed");
-});
+}); 
 
 
   /*Profile.create(req.body, function (err, post) {

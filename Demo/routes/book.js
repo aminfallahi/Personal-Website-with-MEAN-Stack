@@ -44,3 +44,8 @@ router.delete('/:id', function(req, res, next) {
 });
 
 module.exports = router;
+
+/* Curl Command to test Post
+
+curl -i -X POST -H "Content-Type:application/json" http://localhost:3000/profile -d "{\"name\":\"Kyle\",\"Location\":\"US\",\"Email\": \"kylelee6\",\"PhoneNumber\":\"911\"}"
+*/

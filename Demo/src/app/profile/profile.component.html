@@ -1,0 +1,25 @@
+<p>
+  profile works!
+</p>
+
+<div class="container">
+  <h1>TestProfile</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Email</th>
+        <th>Phone number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let profile of profiles">
+        <td>{{ profile.name }}</td>
+        <td>{{ profile.Location }}</td>
+        <td>{{ profile.Email }}</td>
+        <td>{{ profile.PhoneNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
