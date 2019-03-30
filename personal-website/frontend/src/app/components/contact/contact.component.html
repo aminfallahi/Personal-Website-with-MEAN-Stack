@@ -1,0 +1,26 @@
+<div>
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h3>Contact Us</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="contactForm" class="contact-form">
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Subject" formControlName="subject" #subject>
+
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Email" formControlName="email" #email>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Body" formControlName="body" #body></textarea>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <br><br>
+      <button mat-raised-button color="accent" routerLink="/msgs">Back</button>&nbsp;
+      <button type="submit" (click)="addMsg(subject.value, email.value, body.value)" mat-raised-button color="primary">Send</button>
+    </form>
+  </mat-card>
+</div>
