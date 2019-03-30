@@ -1,6 +1,4 @@
-<p>
-  profile works!
-</p>
+
 
 <div class="container">
   <h1>TestProfile</h1>
@@ -23,3 +21,12 @@
     </tbody>
   </table>
 </div>
+
+<app-profile-create (EmitEventUpdate)= "update()"></app-profile-create>
+<app-test-angular></app-test-angular>
+
+<h1>Profile Create
+  <a [routerLink]="['/profile-create']" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+</h1>

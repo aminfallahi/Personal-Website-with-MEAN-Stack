@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Profile = require('../models/Profile.js');
 
-/* GET ALL BOOKS */
+/* GET ALL Profile */
 router.get('/', function(req, res, next) {
   Profile.find(function (err, products) {
     if (err) return next(err);
