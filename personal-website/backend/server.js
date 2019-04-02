@@ -4,6 +4,9 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Msg from './models/Msg';
 
+//Define Routes
+//import Profile from './routes/Profile'
+
 const app = express();
 const router = express.Router();
 
@@ -20,6 +23,10 @@ connection.once('open', () => {
 });
 
 app.use('/', router); //Applies the routes to our application
+
+//Defining Routes
+//app.use('/Profile', Profile);
+
 
 /* If you want to run middleware that will run on every request */
 
@@ -51,6 +58,8 @@ router.route('/msgs').get((req, res) => {
 });
 
 //Post
+//Curl Command to test
+//curl -i -X POST -H "Content-Type:application/json" -d "{\"subject\":\"HiTesting775\",\"email\":\"Test@gmail.com\",\"body\":\"Testing for cse775\"}" http://localhost:4000/contact
 router.route('/contact').post((req, res) => {
     let msg = new Msg(req.body);
     msg.save()
