@@ -5,7 +5,9 @@ import mongoose from 'mongoose';
 import Msg from './models/Msg';
 
 //Define Routes
-//import Profile from './routes/Profile'
+import Profile from './routes/Profile'
+import Msgs from './routes/Msg'
+import Contact from './routes/Contact'
 
 const app = express();
 const router = express.Router();
@@ -14,6 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://127.0.0.1:27017/pw');
+//Connect to offsite
 //mongoose.connect('mongodb+srv://CSE775:775@cluster0-u4bmz.mongodb.net/test?retryWrites=true');
 
 const connection = mongoose.connection;
@@ -23,6 +26,9 @@ connection.once('open', () => {
 });
 
 app.use('/', router); //Applies the routes to our application
+app.use('/msgs', Msgs);
+app.use('/contact', Contact);
+app.use ('/profile', Profile);
 
 //Defining Routes
 //app.use('/Profile', Profile);
@@ -48,19 +54,20 @@ app.use('/', router); //Applies the routes to our application
 
 //Later on We should partition this into its seperate folder called routes to cleanup this code
 //Get
-router.route('/msgs').get((req, res) => {
+
+/*router.route('/msgs').get((req, res) => {
     Msg.find((err, msgs) => {
         if (err)
             console.log(err);
         else
             res.json(msgs);
     });
-});
+});*/
 
 //Post
 //Curl Command to test
 //curl -i -X POST -H "Content-Type:application/json" -d "{\"subject\":\"HiTesting775\",\"email\":\"Test@gmail.com\",\"body\":\"Testing for cse775\"}" http://localhost:4000/contact
-router.route('/contact').post((req, res) => {
+/*router.route('/contact').post((req, res) => {
     let msg = new Msg(req.body);
     msg.save()
         .then(msg => {
@@ -69,6 +76,14 @@ router.route('/contact').post((req, res) => {
         .catch(err => {
             res.status(400).send('Failed to create new record');
         });
-});
+});*/
+
+
+
+
+//Testing 404
+app.get('*', function(req, res){
+    res.send('NopeCannot get', 404);
+  });
 
 app.listen(4000, () => console.log(`Express server running on port 4000`));

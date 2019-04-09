@@ -1,7 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
-var Profile = require('../models/Profile.js');
+//var express = require('express');
+//var router = express.Router();
+//var mongoose = require('mongoose');
+//var Profile = require('../models/Profile.js');
+
+import express from 'express';
+let router = express.Router;
+import mongoose from 'mongoose';
+import Profile from '../models/Profile.js';;
 
 /* GET ALL Profile */
 router.get('/', function(req, res, next) {
