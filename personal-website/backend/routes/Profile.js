@@ -4,21 +4,25 @@
 //var Profile = require('../models/Profile.js');
 
 import express from 'express';
-let router = express.Router;
+let router = express.Router();
+
 import mongoose from 'mongoose';
 import Profile from '../models/Profile.js';;
 
 /* GET ALL Profile */
 router.get('/', function(req, res, next) {
-  Profile.find(function (err, products) {
+  Profile.find((err, products) =>{
     if (err) return next(err);
     res.json(products);
   });
 });
 
+
+
+
 /* GET SINGLE Profile BY ID */
 router.get('/:id', function(req, res, next) {
-  Profile.findById(req.params.id, function (err, post) {
+  Profile.findById(req.params.id, (err, post) =>{
     if (err) return next(err);
     res.json(post);
   });
@@ -33,10 +37,10 @@ router.post('/', function(req, res, next) {
 }); 
 
 
-  /*Profile.create(req.body, function (err, post) {
+  Profile.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
-  });*/
+  });
 });
 
 /* UPDATE Profile */
