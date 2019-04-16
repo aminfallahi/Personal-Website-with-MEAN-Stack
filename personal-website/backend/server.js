@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import Msg from './models/Msg';
 
 //Define Routes
-import Profile from './routes/Profile'
+//import Profile from './routes/Profile'
 import Msgs from './routes/Msg'
 import Contact from './routes/Contact'
 
@@ -28,7 +28,7 @@ connection.once('open', () => {
 app.use('/', router); //Applies the routes to our application
 app.use('/msgs', Msgs);
 app.use('/contact', Contact);
-app.use ('/profile', Profile);
+//app.use ('/profile', Profile);
 
 //Defining Routes
 //app.use('/Profile', Profile);

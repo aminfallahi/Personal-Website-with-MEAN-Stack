@@ -20,9 +20,12 @@ import { MatToolbarModule,
          MatCardModule, 
          MatTableModule, 
          MatDividerModule, 
-         MatSnackBarModule } from '@angular/material';
+         MatSnackBarModule,
+         MatSidenavModule } from '@angular/material';
+
+
          
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'msgs', component: MsgsComponent },
@@ -36,6 +39,8 @@ const routes: Routes = [
     ContactComponent,
     MsgsComponent
   ],
+  exports: [MatSidenavModule]
+  ,
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -52,7 +57,9 @@ const routes: Routes = [
     MatTableModule,
     MatDividerModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule
+    
   ],
   providers: [PwService],
   bootstrap: [AppComponent]

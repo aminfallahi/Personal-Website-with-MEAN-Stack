@@ -1,0 +1,14 @@
+.row{
+    float: left;
+    height: 33.33%;
+}
+
+
+.column:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.background-class{
+    background-image: url('../../../assets/Images/TestBackground.gif');
+}
