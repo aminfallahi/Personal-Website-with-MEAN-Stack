@@ -8,6 +8,8 @@ import Msg from './models/Msg';
 import Profile from './routes/Profile'
 import Msgs from './routes/Msg'
 import Contact from './routes/Contact'
+import Project from './routes/Project'
+import Interest from './routes/Interest'
 
 const app = express();
 const router = express.Router();
@@ -29,6 +31,8 @@ app.use('/', router); //Applies the routes to our application
 app.use('/msgs', Msgs);
 app.use('/contact', Contact);
 app.use ('/profile', Profile);
+app.use ('/project', Project);
+app.use ('/interest', Interest);
 
 //Defining Routes
 //app.use('/Profile', Profile);
