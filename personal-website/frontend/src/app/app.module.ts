@@ -22,6 +22,9 @@ import { MatToolbarModule,
          MatDividerModule, 
          MatSnackBarModule,
          MatSidenavModule } from '@angular/material';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ResumeComponent } from './components/resume/resume.component';
+import { InterestsComponent } from './components/interests/interests.component';
 
 
          
@@ -29,6 +32,9 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'msgs', component: MsgsComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'resume', component: ResumeComponent },
+  { path: 'interests', component: InterestsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
@@ -37,7 +43,10 @@ export const routes: Routes = [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    MsgsComponent
+    MsgsComponent,
+    ProjectsComponent,
+    ResumeComponent,
+    InterestsComponent
   ],
   exports: [MatSidenavModule]
   ,
