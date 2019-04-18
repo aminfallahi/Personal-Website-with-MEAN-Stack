@@ -25,6 +25,7 @@ import { MatToolbarModule,
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { InterestsComponent } from './components/interests/interests.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
          
@@ -35,6 +36,8 @@ export const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'interests', component: InterestsComponent },
+  { path: 'profile', component: ProfileComponent },
+
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
@@ -46,7 +49,8 @@ export const routes: Routes = [
     MsgsComponent,
     ProjectsComponent,
     ResumeComponent,
-    InterestsComponent
+    InterestsComponent,
+    ProfileComponent
   ],
   exports: [MatSidenavModule]
   ,
